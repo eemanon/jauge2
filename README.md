@@ -1,2 +1,2 @@
-# jauge2
-Java project for university
+# Tests
+Tests Ibrahim Hamid
