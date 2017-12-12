@@ -39,9 +39,8 @@ public class JaugeNaturelTest implements IJaugeTest{
 	//QUESTION 1 PARTIE 4
 	@Test
 	private void testCreationNonValide() {
-		Jauge inverse = new creerJauge(Jauge, -45, -45, -45);
-	
-		Jauge egale = new creerJauge(JaugeNaturel);
+		Jauge inverse = new creerJauge(78, 13, 0);
+		Jauge egale = new creerJauge(-45, -45, -45);
 	}
 	
 	@Test
