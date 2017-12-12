@@ -8,6 +8,7 @@ public class Jauge {
         JaugeNegatif,
         JaugeReel         			
 	};
+	
 	public static Jauge creerJauge(TypeJauge type) {
 		switch (type) {
 		case JaugeDistance:

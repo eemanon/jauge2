@@ -18,11 +18,7 @@ public class JaugeNaturelTest implements IJaugeTest{
 		jauge5 = new JaugeNaturel(0,300,321);
 		jauge6 = new JaugeNaturel(300,302, 301);
 		jauge7 = new JaugeNaturel(300,300,301);
-		jauge8 = new JaugeNaturel(300,302, 302);
-		
-		//
-		
-		
+		jauge8 = new JaugeNaturel(300,302, 302);	
 	}
 	
 	@After
@@ -33,11 +29,21 @@ public class JaugeNaturelTest implements IJaugeTest{
 		jauge3 = null;
 		
 	}
+	
 	@Override
 	public Jauge creerJauge() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	//QUESTION 1 PARTIE 4
+	@Test
+	private void testCreationNonValide() {
+		Jauge inverse = new creerJauge(Jauge, -45, -45, -45);
+	
+		Jauge egale = new creerJauge(JaugeNaturel);
+	}
+	
 	@Test
 	public void testEstRouge() {
 		assert(jauge.estRouge());
@@ -45,7 +51,7 @@ public class JaugeNaturelTest implements IJaugeTest{
 		assert(jauge3.estRouge());
 		assert(jauge1.estRouge());
 	}
-
+	
 	@Test
 	public void testEstVert() {
 		assert(jauge.estVert()):"jauge est pas vert";
@@ -79,10 +85,6 @@ public class JaugeNaturelTest implements IJaugeTest{
 		assert(!jauge5.estBleu() && jauge5.estVert() && !jauge5.estRouge()):"La valeur n'est pas dans l'intervalle";
 	}
 	@Test
-	public void testLimiteVgieMaxInferieurVigieMin() {
-		assert(jauge1.getMin()<jauge1.getMax()):"VgieMax n est pas plus grand que VgieMin!";	
-	}
-	@Test
 	public void run() {
 			     System.out.print("Test de JaugeNaturel:");
 
@@ -103,10 +105,6 @@ public class JaugeNaturelTest implements IJaugeTest{
 		jauge6.incrementer();
 		jauge6.incrementer();
 		assert(!jauge6.estBleu() && jauge6.estVert() && !jauge6.estRouge()):"La valeur n'est pas dans l'intervalle";
-	}
-	@Test
-	public void testMaxEgalMin() {
-		assert(jauge1.getMin()==jauge1.getMax()):"VgieMax n est pas egale à VgieMin!";	
 	}
 	@Test
 	public void testSuperieurIntervalle() {
